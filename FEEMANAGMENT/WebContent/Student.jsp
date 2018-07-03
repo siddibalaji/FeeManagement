@@ -10,24 +10,16 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<style>
-  .modal-header, h4, .close {
-      background-color: #5cb85c;
-      color:white !important;
-      text-align: center;
-      font-size: 30px;
-  }
-  .modal-footer {
-      background-color: #f9f9f9;
-  }
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<jsp:include page="adminMenu.jsp" />
 
-<div class="container">   
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#registrationform">+Add Student</button>
-    
+
+<div>   
+
+
+  <div class="main">
   <table class="table table-hover">
     <thead>
       <tr>
@@ -59,6 +51,8 @@
       </tr>
     </tbody>
   </table>
+  </div>
+  
 </div>
 <!-- this is for ADD STUDENT DETAILS -->
 <div id="registrationform" class="modal fade" role="dialog">
@@ -80,31 +74,31 @@
 			<legend>Personal Information</legend>
 				<div class="form-group well well-sm well well-sm">
 					<input type="text" name="firstname" id="firstname"
-						placeholder="Enter Your FirstName" class="form-control" required>
+						placeholder="Enter Your FirstName" class="form-control"  >
 				</div>
 				<div class="form-group well well-sm">
-					<input type="text" name="Lastname" id="lastname"
-						placeholder="Enter Your LastName" class="form-control" required>
+					<input type="text" name="lastname" id="lastname"
+						placeholder="Enter Your LastName" class="form-control"  >
 				</div>
 				<div class="form-group well well-sm">
 					<input type="date" name="doj" id="doj"
-						placeholder="D.O.J" class="form-control" required>
+						placeholder="D.O.J" class="form-control"  >
 				</div>
 				<div class="form-group well well-sm">
 					<input type="text" name="number" id="number"
-						placeholder="phone number" class="form-control" required>
+						placeholder="phone number" class="form-control"  >
 				</div>
 				<div class="form-group well well-sm">
 					<input type="text" name="fname" id="fname"
-						placeholder="Enter your Father Name" class="form-control" required>
+						placeholder="Enter your Father Name" class="form-control"  >
 				</div>
 				<div class="form-group well well-sm">
-					<input type="radio" name="gender" id="gen" value="male" required>Male 
-					<input	type="radio" name="gender" id="gen" value="female" required>Female
+					<input type="radio" name="gender" id="gen" value="male"  >Male 
+					<input	type="radio" name="gender" id="gen" value="female"  >Female
 				</div>
 				<div class="form-group well well-sm">
-					<input type="email" name="email id="email"
-						placeholder="Ex:your@gmail.com" class="form-control" required>
+					<input type="email" name="email" id="email"
+						placeholder="Ex:your@gmail.com" class="form-control"  >
 				</div>
 				<div class="form-group well well-sm">
 					<select name="class" id="class" placeholder="Class"
@@ -125,31 +119,31 @@
 <!-- This is about FeeInformation -->
 <legend>Fee Information</legend>
 				<div class="form-group well well-sm">
-					<input type="text" name="total Fee" id="total Fee"
-						placeholder="Totalfee" class="form-control" required>
-				</div>
+					<input type="text" name="totalfee" id="total Fee"
+						placeholder="Totalfee" class="form-control"  >
+				</div> 
 				<div class="form-group well well-sm">
 					<input type="text" name="advancefee" id="advancefee"
-						placeholder="advancefee" class="form-control" required>
+						placeholder="advancefee" class="form-control"  >
 				</div>
 				<div class="form-group well well-sm">
 					<input type="text" name="balance" id="balance"
-						placeholder="Balance" class="form-control" required>
+						placeholder="Balance" class="form-control"  >
 				</div>
 				<div class="form-group well well-sm">
-					<input type="textarea" name="feeremark" id="feeremark"
-						placeholder="comments about fee remarks" class="form-control" required>
+					<input type="text" name="feeremark" id="feeremark"
+						placeholder="comments about fee remarks" class="form-control"  >
 				</div>
 <!-- This is about optional information -->
 
 <legend>Optional Information</legend>
           <div class="form-group well well-sm">
 					<input type="textarea" name="aboutstudent" id="aboutstudent"
-						placeholder="Aboutstudent" class="form-control" required>
+						placeholder="Aboutstudent" class="form-control"  >
 				</div>
 				<div class="form-group well well-sm">
 					<input type="text" name="address" id="address"
-						placeholder="Enter yours address details..." class="form-control" required>
+						placeholder="Enter yours address details..." class="form-control"  >
 				</div>
 				
 				<div class="btn">

@@ -55,7 +55,7 @@
             <a href="#" class="pull-right">Forgot Password?</a>
         </div>        
     </form>
-    <p class="text-center"><a href="#">Create an Account</a></p>
+    <p class="text-center"><a href="Student.jsp">Create an Account</a></p>
 </div>
 </body>
 </html>                                		                            
