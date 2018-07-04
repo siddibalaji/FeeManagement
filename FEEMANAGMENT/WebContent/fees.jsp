@@ -60,17 +60,26 @@
 				</tr>
 			</tbody>
 		</table>
-
+<div id="somediv"></div>
 	</div>
-	<div id="somediv"></div>
+	
 
 
 <script>
 $(window).on('load', function(){
 	console.log("jquery");
-	$.ajax("StudentFinder", function(responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
-        $("#somediv").text(responseText);           // Locate HTML DOM element with ID "somediv" and set its text content with the response text.
-    });
+	$.ajax({
+		type : "POST",
+		
+		url : "StudentFinder",
+		data : $("#regstd").serialize(), 									
+		success : function(data) {
+			console.log(data);
+			console.log(data[1])
+			$("#somediv").html(data).addClass("alert alert-success");
+			
+		}
+	});
 });
 </script>
 </body>

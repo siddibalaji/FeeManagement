@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.ResultSetMetaData;
+import com.sp.dto.StudentBean;
 
 
 @WebServlet("/StudentFinder")
@@ -30,32 +33,16 @@ public class StudentFinder extends HttpServlet {
 			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/feemanagment_db","root","");
 			String sql="select * from user";
 			PreparedStatement pst= (PreparedStatement) con.prepareStatement(sql);
-			
-			 
-
 
 			rs=pst.executeQuery();
+			ResultSetMetaData md=(ResultSetMetaData) rs.getMetaData();
+			System.out.println(md.getColumnCount());
+			System.out.println(md.getColumnName(5));
 			System.out.println(rs);
-			while(rs.next())
-			{
-				out.println(rs.getString(1));
-				out.println(rs.getString(2));
-				out.println(rs.getString(3));
-				out.println(rs.getString(4));
-				out.println(rs.getString(5));
-				out.println(rs.getString(6));
-				out.println(rs.getString(7));
-				out.println(rs.getString(8));
-				out.println(rs.getString(9));
-				out.println(rs.getString(10));
-				out.println(rs.getString(11));
-				out.println(rs.getString(12));
-				out.println(rs.getString(13));
-				out.println(rs.getString(14));
-				out.println(rs.getString(15));
-				out.println(rs.getString(16));
-			}
-			
+			StudentBean obj=new StudentBean();
+			List<Object> list= obj.resultSetToArrayList(rs);
+			System.out.println(list);	
+			out.println(list);
 		} catch (Exception e) {
 			out.println("Error goes her"+e);
 		}
