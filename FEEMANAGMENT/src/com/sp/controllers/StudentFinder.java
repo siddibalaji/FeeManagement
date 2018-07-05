@@ -40,8 +40,7 @@ public class StudentFinder extends HttpServlet {
 			System.out.println(md.getColumnName(5));
 			System.out.println(rs);
 			StudentBean obj=new StudentBean();
-			List<String> list= obj.resultSetToArrayList(rs);
-			
+			List<String> list= obj.resultSetToArrayList(rs);			
 			System.out.println(list);	
 			System.out.println(list.toArray()[1]);
 			out.println(list);
