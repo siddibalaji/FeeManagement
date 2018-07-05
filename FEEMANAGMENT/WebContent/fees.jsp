@@ -69,13 +69,11 @@
 $(window).on('load', function(){
 	console.log("jquery");
 	$.ajax({
-		type : "POST",
-		
-		url : "StudentFinder",
-		data : $("#regstd").serialize(), 									
+		type : "POST",		
+		url : "StudentFinder",									
 		success : function(data) {
 			console.log(data);
-			console.log(data[1])
+			console.log(data[5]);
 			$("#somediv").html(data).addClass("alert alert-success");
 			
 		}

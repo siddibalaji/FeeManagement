@@ -8,8 +8,11 @@ import java.util.List;
 
 import com.mysql.jdbc.ResultSetMetaData;
 
+import netscape.javascript.JSObject;
+
 public class StudentBean {
 	public List resultSetToArrayList(ResultSet rs) throws SQLException{
+		
 		  ResultSetMetaData md = (ResultSetMetaData) rs.getMetaData();
 		  int columns = md.getColumnCount();
 		  ArrayList list = new ArrayList(50);
