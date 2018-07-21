@@ -18,7 +18,7 @@
   <a href="#services">Report</a>
   <a href="#clients">Settings</a>
   <a href="#contact">Logout</a>
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#registrationform">+Add Student</button>
+  
 </div>
 </body>
 </html>
