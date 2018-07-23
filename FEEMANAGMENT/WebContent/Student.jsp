@@ -11,11 +11,48 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/styles.css">
+  <style type="text/css">
+  #srearchform{
+	margin-top: 47px;
+    margin-bottom: -26px;
+}
+  </style>
 </head>
 <body>
+<script type="text/javascript">
+
+function myfunction(){
+	var firstname=document.getElementById("firstname").v;
+	var lastname=document.getElementById("lastname").focus();
+	
+}a
+
+
+
+</script>
 
 <div>   
   <div class="main">
+  <div id="srearchform">
+  <div>
+			<h1>Student Details</h1>
+		</div>
+		<div>
+
+			<form action="" method="post" id="getStudents">
+				<span><label>Name</label><input type="text" name="name" onkeyup="myFunction()"></span>
+				<label>DOJ</label><input
+					type="date"> <label>Branch</label> <select>
+					<option>CSE</option>
+					<option>ECE</option>
+					<option>EEE</option>
+					<option>MEE</option>
+				</select>
+				<button type="submit" name="save" class="btn btn-primary">Search</button>
+				<input type="reset" class=" btn btn-warning" value="Clear" >
+			</form>
+		</div>
+	</div>
   <jsp:include page="RetriveStudentDetails.jsp" />
    <jsp:include page="Update.jsp" />
   </div>
@@ -114,7 +151,7 @@
 				</div>
 				
 				<div class="btn">
-					<button type="submit" name="subm" id="subm" class="form-control">Add
+					<button type="submit" name="subm" id="subm" class="btn btn-info">Add
 						Student</button>
             <div id="response"></div>
 				</div>

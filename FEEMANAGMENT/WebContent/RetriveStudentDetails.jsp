@@ -31,31 +31,18 @@ ResultSet resultSet = null;
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+  #addbutton{
+  margin-left:999px;
+  }
+  </style>
 </head>
 <body>
 <div>
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#registrationform">+Add Student</button><jsp:include page="adminMenu.jsp" />
+<button type="button" id="addbutton" class="btn btn-info btn-lg" data-toggle="modal" data-target="#registrationform">+Add Student</button><jsp:include page="adminMenu.jsp" />
 </div>
 <table  class="table table-hover">
-<div>
-			<h1>Student Details</h1>
-		</div>
-		<div></div>
-		<div>
 
-			<form action="" method="post" id="getStudents">
-				<span><label>Name</label><input type="text" name="name"></span>
-				<label>DOJ</label><input
-					type="date"> <label>Branch</label> <select>
-					<option>CSE</option>
-					<option>ECE</option>
-					<option>EEE</option>
-					<option>MEE</option>
-				</select>
-				<button type="submit" name="save" class="btn btn-primary">Search</button>
-				<input type="reset" value="Clear">
-			</form>
-		</div>
 <thead>
       <tr>
       <th>#</th>
