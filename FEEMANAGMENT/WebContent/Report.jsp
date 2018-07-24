@@ -10,15 +10,78 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/styles.css">
-<title>Update Fee</title>
 </head>
 <body>
 	<jsp:include page="adminMenu.jsp" />
 	<div class="main">
+	<div class="container">
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="Feereportform" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Fee Report</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+		<div class="col-lg-5 col-sm-5 col-md-5">
+			<form id="Feereportformid" >
+			<legend>Student_Info</legend>
+				<table class="table table-hover" border="solid 2px">
+				<thead ><tr><tr><th>Name<td>siddesh</td></th><th>Branch<td>Warangal</td></th><br></tr></tr>
+				<tr><tr><th>Contact<td>9533153142</td></th><th>Joining Date<td>12-12-12</td></th></tr></tr>
+				<thead>
+			</table>
+			<legend>Fee_Info</legend>
+			<div class="table-responsive">          
+              <table class="table">
+    <thead>
+      <tr>
+        
+        <th>Date</th>
+        <th>Paid</th>
+        <th>Remark</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>12-12-12</td>
+        <td>4500</td>
+        <td>3000 remain</td>
+        
+      </tr>
+    </tbody>
+  </table>
+			</div>
+			<legend></legend>
+			<table class="table table-hover">
+			<thead>
+			<tr><th>Total_Fee:<td>4500</td></th></tr>
+			<tr><th>Paid_Fee:<td>1500</td></th></tr>
+			<tr><th>Balance:<td>0</td></th></tr>
+			</thead>
+			
+			</table>	
+				
+        </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 		<div>
-			<h1>FEES</h1>
+			<h1>Report</h1>
 		</div>
 		<div></div>
 		<div>
@@ -51,13 +114,14 @@
 					<th>#</th>
 					<th>Firstname</th>
 					<th>Lastname</th>
-					<th>Contact</th>
 					<th>DOJ</th>
+					<th>Contact</th>
 					<th>Fee</th>
 					<th>Balance</th>
 					<th>Email</th>
-					<th>Edit</th>
-					<th>Del</th>
+					<th>Action</th>
+					<th>Print</th>
+					
 				</tr>
 			</thead>
 			<tbody>
@@ -68,11 +132,11 @@
 					<td><%=rs.getString(3) %></td>
 					<td><%=rs.getString(4) %></td>
 					<td><%=rs.getString(5) %></td>
-					<td><%=rs.getString(7) %></td>
-					<td><%=rs.getString(9) %></td>
+					<td><%=rs.getString("totalfee") %></td>
+					<td><%=rs.getString("balance") %></td>
 					<td><%=rs.getString(8) %></td>
-					<td><input type="button" value="Pay fee"></td>
-					<td>del</td>
+					<td> <button type="button" class="btn btn-info" data-toggle="modal" data-target="#Feereportform">Fee Details</button></td>
+					<td><a href="feeprintout.jsp"><img src="D:\GIT HUB\FeeManagement\FEEMANAGMENT\images\p1.jpg"></a></td>
 				</tr>
 				<%} %>
 			</tbody>
@@ -85,6 +149,7 @@
 
 
 		<!-- <div id="somediv"></div> -->
+		
 	</div>
 
 
@@ -98,41 +163,12 @@
 				success : function(data) {
 					console.log(data);
 					console.log(data[5]);
-					$("").html(data).addClass("alert alert-success");
+					$("#somediv").html(data).addClass("alert alert-success");
 
 				}
 			});
 		});
 	</script>
-	<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-       <div class="container">
-		<div class="col-lg-5 col-sm-5 col-md-5">
-			<form id="registrationformid" >
-			<legend>Personal Information</legend>
-				<div class="form-group well well-sm well well-sm">
-					<input type="text" name="firstname" id="firstname"
-						placeholder="Enter Your FirstName" class="form-control"  >
-				</div>
-			</form>
-			</div>
-			</div>	
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
+	
 </body>
 </html>

@@ -15,10 +15,9 @@
   <a href="#clients">Branch</a>
   <a href="Student.jsp">Student</a>
   <a href="fees.jsp">Fees</a>
-  <a href="#services">Report</a>
+  <a href="Report.jsp">Report</a>
   <a href="#clients">Settings</a>
-  <a href="#contact">Logout</a>
-  
+  <a href="index.jsp">Logout</a>
 </div>
 </body>
 </html>

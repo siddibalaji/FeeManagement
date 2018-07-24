@@ -22,10 +22,10 @@
 <script type="text/javascript">
 
 function myfunction(){
-	var firstname=document.getElementById("firstname").v;
+	var firstname=document.getElementById("firstname");
 	var lastname=document.getElementById("lastname").focus();
 	
-}a
+}
 
 
 
@@ -39,7 +39,7 @@ function myfunction(){
 		</div>
 		<div>
 
-			<form action="" method="post" id="getStudents">
+			<form action="SearchingServlet" method="post" id="getStudents">
 				<span><label>Name</label><input type="text" name="name" onkeyup="myFunction()"></span>
 				<label>DOJ</label><input
 					type="date"> <label>Branch</label> <select>

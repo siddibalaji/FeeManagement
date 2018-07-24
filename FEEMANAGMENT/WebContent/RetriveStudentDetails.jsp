@@ -38,9 +38,11 @@ ResultSet resultSet = null;
   </style>
 </head>
 <body>
+
 <div>
 <button type="button" id="addbutton" class="btn btn-info btn-lg" data-toggle="modal" data-target="#registrationform">+Add Student</button><jsp:include page="adminMenu.jsp" />
 </div>
+ 
 <table  class="table table-hover">
 
 <thead>
