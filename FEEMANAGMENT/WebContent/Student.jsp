@@ -16,6 +16,10 @@
 	margin-top: 47px;
     margin-bottom: -26px;
 }
+h2{
+border-bottom: 5px solid green;
+padding-bottom:20px;
+}
   </style>
 </head>
 <body>
@@ -35,7 +39,7 @@ function myfunction(){
   <div class="main">
   <div id="srearchform">
   <div>
-			<h1>Student Details</h1>
+			<h2>Student Details</h2>
 		</div>
 		<div>
 

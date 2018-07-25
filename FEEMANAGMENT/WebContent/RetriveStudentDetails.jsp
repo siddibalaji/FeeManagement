@@ -33,7 +33,7 @@ ResultSet resultSet = null;
   <link rel="stylesheet" href="css/styles.css">
   <style>
   #addbutton{
-  margin-left:999px;
+  margin-left:960px;
   }
   </style>
 </head>

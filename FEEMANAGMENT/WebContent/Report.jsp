@@ -11,6 +11,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/styles.css">
+<style type="text/css">
+h2{
+border-bottom: 5px solid green;
+padding-bottom:20px;
+}
+</style>
 </head>
 <body>
 	<jsp:include page="adminMenu.jsp" />
@@ -33,6 +39,8 @@
 			<form id="Feereportformid" >
 			<legend>Student_Info</legend>
 				<table class="table table-hover" border="solid 2px">
+				
+		
 				<thead ><tr><tr><th>Name<td>siddesh</td></th><th>Branch<td>Warangal</td></th><br></tr></tr>
 				<tr><tr><th>Contact<td>9533153142</td></th><th>Joining Date<td>12-12-12</td></th></tr></tr>
 				<thead>
@@ -81,7 +89,7 @@
   </div>
 </div>
 		<div>
-			<h1>Report</h1>
+			<h2>Report</h2>
 		</div>
 		<div></div>
 		<div>

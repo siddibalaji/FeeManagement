@@ -10,14 +10,20 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<div class="container">
+		<div class="col-lg-5 col-sm-5 col-md-5">
 <div class="sidenav">
-  <a href="#about">Dashboard</a>
-  <a href="#clients">Branch</a>
-  <a href="Student.jsp">Student</a>
-  <a href="fees.jsp">Fees</a>
-  <a href="Report.jsp">Report</a>
-  <a href="#clients">Settings</a>
-  <a href="index.jsp">Logout</a>
+<a href="#" class="btn btn-info ">	
+          <span class="glyphicon glyphicon-dashboard"></span> Dashboard
+        </a> <br>
+  <a href="Branch.jsp" class="btn btn-info"><span class="glyphicon glyphicon-home">Branch</span></a><br>
+  <a href="Student.jsp"class="btn btn-info"><span class="glyphicon glyphicon-user">Student</span></a><br>
+  <a href="fees.jsp" class="btn btn-info"><span class="glyphicon glyphicon-usd">Fees</span></a><br>
+  <a href="Report.jsp"class="btn btn-info"><span class="glyphicon glyphicon-pencil">Report</span></a><br>
+  <a href="#clients"class="btn btn-info"><span class="glyphicon glyphicon-cog">Settings</span></a><br>
+  <a href="index.jsp"class="btn btn-info"><span class="glyphicon glyphicon-off">Logout</span></a><br>
+</div>
+</div>
 </div>
 </body>
 </html>
