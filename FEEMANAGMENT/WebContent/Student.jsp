@@ -11,46 +11,54 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/styles.css">
+  <style type="text/css">
+  #srearchform{
+	margin-top: 47px;
+    margin-bottom: -26px;
+}
+h2{
+border-bottom: 5px solid green;
+padding-bottom:20px;
+}
+  </style>
 </head>
 <body>
-<jsp:include page="adminMenu.jsp" />
+<script type="text/javascript">
 
+function myfunction(){
+	var firstname=document.getElementById("firstname");
+	var lastname=document.getElementById("lastname").focus();
+	
+}
+
+
+
+</script>
 
 <div>   
-
-
   <div class="main">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-      <th>#</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Contact</th>
-        <th>DOJ</th>
-        <th>Fee</th>
-        <th>Balance</th>
-        <th>Email</th>
-        <th>Edit</th>
-        <th>Del</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>1</td>
-        <td>John</td>
-        <td>Doe</td>
-        <td>99878367862</td>
-        <td>John</td>
-        <td>25000</td>
-        <td>10000</td>
-        <td>john@example.com</td>
-        <td>edit</td>
-        <td>del</td>
-        
-      </tr>
-    </tbody>
-  </table>
+  <div id="srearchform">
+  <div>
+			<h2>Student Details</h2>
+		</div>
+		<div>
+
+			<form action="SearchingServlet" method="post" id="getStudents">
+				<span><label>Name</label><input type="text" name="name" onkeyup="myFunction()"></span>
+				<label>DOJ</label><input
+					type="date"> <label>Branch</label> <select>
+					<option>CSE</option>
+					<option>ECE</option>
+					<option>EEE</option>
+					<option>MEE</option>
+				</select>
+				<button type="submit" name="save" class="btn btn-primary">Search</button>
+				<input type="reset" class=" btn btn-warning" value="Clear" >
+			</form>
+		</div>
+	</div>
+  <jsp:include page="RetriveStudentDetails.jsp" />
+   <jsp:include page="Update.jsp" />
   </div>
   
 </div>
@@ -74,7 +82,7 @@
 			<legend>Personal Information</legend>
 				<div class="form-group well well-sm well well-sm">
 					<input type="text" name="firstname" id="firstname"
-						placeholder="Enter Your FirstName" class="form-control"  >
+						placeholder="Enter Your FirstName" class="form-control" required >
 				</div>
 				<div class="form-group well well-sm">
 					<input type="text" name="lastname" id="lastname"
@@ -82,23 +90,23 @@
 				</div>
 				<div class="form-group well well-sm">
 					<input type="date" name="doj" id="doj"
-						placeholder="D.O.J" class="form-control"  >
+						placeholder="D.O.J" class="form-control"  required>
 				</div>
 				<div class="form-group well well-sm">
 					<input type="text" name="number" id="number"
-						placeholder="phone number" class="form-control"  >
+						placeholder="phone number" class="form-control"  required>
 				</div>
 				<div class="form-group well well-sm">
 					<input type="text" name="fname" id="fname"
-						placeholder="Enter your Father Name" class="form-control"  >
+						placeholder="Enter your Father Name" class="form-control" required >
 				</div>
 				<div class="form-group well well-sm">
-					<input type="radio" name="gender" id="gen" value="male"  >Male 
-					<input	type="radio" name="gender" id="gen" value="female"  >Female
+					<input type="radio" name="gender" id="gen" value="male"  required>Male 
+					<input	type="radio" name="gender" id="gen" value="female"  required>Female
 				</div>
 				<div class="form-group well well-sm">
 					<input type="email" name="email" id="email"
-						placeholder="Ex:your@gmail.com" class="form-control"  >
+						placeholder="Ex:your@gmail.com" class="form-control" required  >
 				</div>
 				<div class="form-group well well-sm">
 					<select name="class" id="class" placeholder="Class"
@@ -110,7 +118,7 @@
 				</div>
 				<div class="form-group well well-sm">
 					<select type="text" name="section" id="section"
-						placeholder="Section" class="form-control">
+						placeholder="Section" class="form-control" required>
 						<option>I</option>
 						<option>II</option>
 						<option>III</option>
@@ -120,34 +128,34 @@
 <legend>Fee Information</legend>
 				<div class="form-group well well-sm">
 					<input type="text" name="totalfee" id="total Fee"
-						placeholder="Totalfee" class="form-control"  >
+						placeholder="Totalfee" class="form-control" required >
 				</div> 
 				<div class="form-group well well-sm">
 					<input type="text" name="advancefee" id="advancefee"
-						placeholder="advancefee" class="form-control"  >
+						placeholder="advancefee" class="form-control" required >
 				</div>
 				<div class="form-group well well-sm">
 					<input type="text" name="balance" id="balance"
-						placeholder="Balance" class="form-control"  >
+						placeholder="Balance" class="form-control" required >
 				</div>
 				<div class="form-group well well-sm">
 					<input type="text" name="feeremark" id="feeremark"
-						placeholder="comments about fee remarks" class="form-control"  >
+						placeholder="comments about fee remarks" class="form-control" required >
 				</div>
 <!-- This is about optional information -->
 
 <legend>Optional Information</legend>
           <div class="form-group well well-sm">
 					<input type="textarea" name="aboutstudent" id="aboutstudent"
-						placeholder="Aboutstudent" class="form-control"  >
+						placeholder="Aboutstudent" class="form-control" required >
 				</div>
 				<div class="form-group well well-sm">
 					<input type="text" name="address" id="address"
-						placeholder="Enter yours address details..." class="form-control"  >
+						placeholder="Enter yours address details..." class="form-control" required >
 				</div>
 				
 				<div class="btn">
-					<button type="submit" name="subm" id="subm" class="form-control">Add
+					<button type="submit" name="subm" id="subm" class="btn btn-info">Add
 						Student</button>
             <div id="response"></div>
 				</div>

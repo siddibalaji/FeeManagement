@@ -87,7 +87,7 @@ public class StudentRegistrationServlet extends HttpServlet {
 			int i=pst.executeUpdate();
 			System.out.println(i);
 			if(i!=0){
-				out.println("values are inserted successfully");
+				out.println(firstname+"values are inserted successfully");
 				con.close();
 			}else{
 				out.print("somthing went wrong");

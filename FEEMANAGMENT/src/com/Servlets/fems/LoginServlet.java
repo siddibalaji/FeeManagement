@@ -24,6 +24,7 @@ public class LoginServlet extends HttpServlet {
 
 			if ((username.equals("shivaji")) && (password.equals("admin"))) {
 				response.sendRedirect("Student.jsp");
+				out.println("Changed in github");
 
 			} else {
 				out.println("incorect username or password");
