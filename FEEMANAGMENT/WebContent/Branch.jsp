@@ -1,3 +1,26 @@
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%
+String id = request.getParameter("userid");
+String driver = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/";
+String database = "feemanagment_db";
+String userid = "root";
+String password = "";
+try {
+Class.forName(driver);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,9 +42,9 @@ padding-bottom:20px;
 </head>
 <body>
 <jsp:include page="adminMenu.jsp" />
+
 <div class="main">
 <div class="container">
-
 
 <!-- Modal -->
   <div class="modal fade" id="Branchform" role="dialog">
@@ -34,7 +57,7 @@ padding-bottom:20px;
         <div class="modal-body">
           <div class="container">
 		<div class="col-lg-5 col-sm-5 col-md-5">
-			<form id="registrationformid" >
+			<form id="branchdetailsformid" >
 			<legend>Branch Details</legend>
 				<div class="form-group well well-sm well well-sm">
 					<input type="text" name="branchname" id="branchname"
@@ -77,7 +100,9 @@ padding-bottom:20px;
   <input type="text" placeholder="Search.." name="search">
   <button type="submit"><i class="fa fa-search"></i></button>
   </form>
-  </div>     
+  </div>
+    
+  <!-- *******************************//fetch the branch details here...------------- -->   
   <table class="table table-hover">
     <thead>
       <tr>
@@ -87,17 +112,58 @@ padding-bottom:20px;
         <th>Action</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td>update</td>
-      </tr>
-      
-    </tbody>
-  </table>
+    <%
+try{
+connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+statement=connection.createStatement();
+String sql ="select * from branches";
+resultSet = statement.executeQuery(sql);
+while(resultSet.next()){
+%>
+<tr>
+<td><%=resultSet.getString("branch_name") %></td>
+<td><%=resultSet.getString("branch_address") %></td>
+<td><%=resultSet.getString("branch_details") %></td>
+<td><a href="branchupdate.jsp?id=<%=resultSet.getString("id")%>">update</a></td>
+<td><a href="delete.jsp?id=<%=resultSet.getString("id")%>"><button type="button" class="delete">Delete</button></a></td>
+</tr>
+<%
+}
+connection.close();
+} catch (Exception e) {
+e.printStackTrace();
+}
+%>
+</table>
+<!-- fetch is completed -->
+
 </div>
-</div>
+
+<script>
+	 $(document).ready(function(){
+	$("#branchdetailsformid").submit(function(e) {
+    
+		$('#response').html("<b>Loading response...</b>");		 
+	    var url = "BranchRegistrationServlet"; // the script where you handle the form input.
+
+	    $.ajax({
+	           type: "POST",
+	           url: url,
+	           data: $("#branchdetailsformid").serialize(), // serializes the form's elements.
+	           success: function(data)
+	           {
+		           $("#response").html(data).addClass("alert alert-success");		        	   
+		           $("#branchdetailsformid")[0].reset();
+		           
+		           $("#response").fadeOut(300);
+		           console.log("registarion form");
+	           }
+	         });
+           
+	    e.preventDefault(); // avoid to execute the actual submit of the form.
+           
+  });
+}).delay(300);
+	</script>
 </body>
 </html>

@@ -13,7 +13,7 @@
 <div class="container">
 		<div class="col-lg-5 col-sm-5 col-md-5">
 <div class="sidenav">
-<a href="#" class="btn btn-info ">	
+<a href="dashboard.jsp" class="btn btn-info ">	
           <span class="glyphicon glyphicon-dashboard"></span> Dashboard
         </a> <br>
   <a href="Branch.jsp" class="btn btn-info"><span class="glyphicon glyphicon-home">Branch</span></a><br>

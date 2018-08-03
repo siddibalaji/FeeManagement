@@ -77,7 +77,7 @@ while(resultSet.next()){
 <td><%=resultSet.getString("balance") %></td>
 <td><%=resultSet.getString("email") %></td>
 <td><a href="Update.jsp?id=<%=resultSet.getString("id")%>">update</a></td>
-<td><a href="delete.jsp?id=<%=resultSet.getString("id") %>"><button type="button" class="delete">Delete</button></a></td>
+<td><a href="delete.jsp?id=<%=resultSet.getString("id")%>"><button type="button" class="delete">Delete</button></a></td>
 </tr>
 <%
 }

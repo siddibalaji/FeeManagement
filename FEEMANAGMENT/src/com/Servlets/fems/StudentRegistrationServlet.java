@@ -60,7 +60,7 @@ public class StudentRegistrationServlet extends HttpServlet {
 		String feeremarks=request.getParameter("feeremark");
 		String aboutstudent=request.getParameter("aboutstudent");
 		String address=request.getParameter("address"); 
-		out.println(fathername);
+		out.println(firstname);
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/feemanagment_db","root","");
@@ -85,7 +85,7 @@ public class StudentRegistrationServlet extends HttpServlet {
 
 
 			int i=pst.executeUpdate();
-			System.out.println(i);
+			/*System.out.println(i);*/
 			if(i!=0){
 				out.println(firstname+"values are inserted successfully");
 				con.close();

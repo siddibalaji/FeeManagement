@@ -189,7 +189,7 @@ function myfunction(){
 		           $("#response").html(data).addClass("alert alert-success");		        	   
 		           $("#registrationformid")[0].reset();
 		           
-		           $("#response").fadeOut(300000);
+		           $("#response").fadeOut(3000);
 		           console.log("registarion form");
 	           }
 	         });
