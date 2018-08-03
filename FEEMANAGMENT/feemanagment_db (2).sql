@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2018 at 02:17 PM
+-- Generation Time: Aug 03, 2018 at 04:09 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -19,6 +19,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `feemanagment_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `branches`
+--
+
+CREATE TABLE IF NOT EXISTS `branches` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `branch_name` varchar(255) NOT NULL,
+  `branch_address` varchar(255) NOT NULL,
+  `branch_details` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `branches`
+--
+
+INSERT INTO `branches` (`id`, `branch_name`, `branch_address`, `branch_details`) VALUES
+(1, 'new york', '#123,white house lane', 'IT comapany');
 
 -- --------------------------------------------------------
 
@@ -44,16 +65,17 @@ CREATE TABLE IF NOT EXISTS `user` (
   `aboutstudent` varchar(4000) DEFAULT NULL,
   `address` varchar(400) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `doj`, `phone_number`, `fathername`, `gender`, `email`, `class`, `section`, `totalfee`, `advancefee`, `balance`, `feeremarks`, `aboutstudent`, `address`) VALUES
-(1, 'Alex', 'Bejjam', '', '08179919865', 'Alex', NULL, 'balajisiddi@adinadataservices.com', 'CSE', 'I', '', '', '', NULL, '', 'jextapose'),
-(2, 'Alex', 'Bejjam', '2018-07-01', '08179919865', 'Alex', 'male', 'balajisiddi@adinadataservices.com', 'CSE', 'I', 'lifetime', 'lifetime', '5000', NULL, 'good guy', 'jextapose'),
-(3, '', '', '', '', '', NULL, '', 'CSE', 'I', '', '', '', 'abc', '', '');
+(2, NULL, NULL, NULL, NULL, 'Alex', 'male', NULL, 'CSE', 'I', NULL, 'lifetime', NULL, NULL, 'good guy', 'jextapose'),
+(3, NULL, NULL, NULL, NULL, '', NULL, NULL, 'CSE', 'I', NULL, '', NULL, 'abc', '', ''),
+(4, 'shivaji', 'siddesh', '2018-07-14', '9533153142', 'mahi', 'male', 'siddu.varikela9533@gmail.com', 'EEE', 'II', '10000', '1000', '90000', 'jhvdhcgfkhd', 'dfFG', 'DASFvbe'),
+(9, 'shivaji', '50000', '2018-07-05', '9533153142', 'mahi', 'male', 'siddu.varikela9533@gmail.com', 'CSE', 'I', '10000', '1000', '90000', 'jhvdhcgfkhd', 'dfFG', 'DASFvbe');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
