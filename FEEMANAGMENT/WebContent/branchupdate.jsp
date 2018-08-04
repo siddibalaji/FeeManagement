@@ -77,7 +77,7 @@ while(resultSet.next()){
 <h1>Update</h1>
  <div class="container">
 <div class="col-lg-5 col-sm-5 col-md-5">
-<form method="post" action="Update-process.jsp">
+<form method="post" action="updatebaranchdetails.jsp">
 <input type="hidden" name="id" value="<%=resultSet.getString("id") %>">
 
 </div>

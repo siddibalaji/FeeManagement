@@ -124,8 +124,8 @@ while(resultSet.next()){
 <td><%=resultSet.getString("branch_name") %></td>
 <td><%=resultSet.getString("branch_address") %></td>
 <td><%=resultSet.getString("branch_details") %></td>
-<td><a href="branchupdate.jsp?id=<%=resultSet.getString("id")%>">update</a></td>
-<td><a href="delete.jsp?id=<%=resultSet.getString("id")%>"><button type="button" class="delete">Delete</button></a></td>
+<td><a href="branchupdate.jsp?id=<%=resultSet.getString("id")%>"><button type="button" class="update">Update</button></a></td>
+<td><a href="deletebranch.jsp?id=<%=resultSet.getString("id")%>"><button type="button" class="delete">Delete</button></a></td>
 </tr>
 <%
 }
